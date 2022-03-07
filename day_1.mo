@@ -81,7 +81,6 @@ actor {
   };
 
 
-
   // Challenge 10 : Implement a function selection_sort that takes an array of natural numbers and returns the sorted
   // array .
   public func selection_sort(array : [Nat]) : async [Nat] {
@@ -92,7 +91,7 @@ actor {
     while (j + 1 < n) {
       var iMin : Nat = j;
       var i : Nat = j + 1;
-      while (i < n) {
+       while (i < n) {
         if (result[i] < result[iMin]) iMin := i;
         i += 1;
       };
