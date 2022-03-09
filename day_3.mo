@@ -130,12 +130,12 @@ actor {
 // the above fails with "type error [M0031], shared function has non-shared parameter type"
 
 // this, though, giving f a "shared" argument and async return value, compiles with no error:
-  public func test(f : shared Nat -> async Bool) : async Bool {
-    return await f(1);
+  public func test(f : shared (Nat, Nat) -> async Bool) : async Bool {
+    return await f(1, 1);
   };
 
-// but if I try to do something similar but where f has two arguments, like the following,
-// it gives an error:
+// but if I try to do something similar with contains<A>, like the following,
+// it gives the same error:
 //  public func contains<A>(array : [A], a : A, f : shared (A, A) -> async Bool) : async Bool {
 //    for (i : A in array.vals()) {
 //      if (await f(i, a)) {
