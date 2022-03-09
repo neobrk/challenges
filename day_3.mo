@@ -106,13 +106,19 @@ actor {
     return Array.map<Nat, Nat>(array, func (n : Nat) : Nat {return n * n});
   };
 
+
   // Challenge 9 : Write a function increase_by_index that takes an array [Nat] and returns a new array where each number has been increased by it's corresponding index.
   // Note : increase_by_index [1, 4, 8, 0] -> [1 + 0, 4 + 1 , 8 + 2 , 0 + 3] = [1,5,10,3]
   // Note 2 : Do not use a loop.
+  public func increase_by_index(array : [Nat]) : async [Nat] {
+    return Array.mapEntries<Nat, Nat>(array, func (n : Nat, i : Nat) : Nat {return n + i});
+  };
+
 
   // Challenge 10 : Write a higher order function contains<A> that takes 3 parameters : an array [A] , a of type A and a function f that takes a tuple of type (A,A) and returns a boolean.
   // This function should return a boolean indicating whether or not a is present in the array.
   // The function f returns true if and only if its two arguments are equal.
+
 //  public func contains<A>(array : [A], a : A, f : (A, A) -> Bool) : async Bool {
 //    for (i : A in array.vals()) {
 //      if (f(i, a)) {
@@ -122,5 +128,21 @@ actor {
 //    return false;
 //  };
 // the above fails with "type error [M0031], shared function has non-shared parameter type"
+
+// this, though, giving f a "shared" argument and async return value, compiles with no error:
+  public func test(f : shared Nat -> async Bool) : async Bool {
+    return await f(1);
+  };
+
+// but if I try to do something similar but where f has two arguments, like the following,
+// it gives an error:
+//  public func contains<A>(array : [A], a : A, f : shared (A, A) -> async Bool) : async Bool {
+//    for (i : A in array.vals()) {
+//      if (await f(i, a)) {
+//        return true;
+//      };
+//    };
+//    return false;
+//  };
 
 }
