@@ -7,6 +7,22 @@
     "day_2": {
       "main": "day_2.mo",
       "type": "motoko"
+    },
+    "day_3": {
+      "main": "day_3.mo",
+      "type": "motoko"
+    },
+    "day_5": {
+      "main": "day_5.mo",
+      "type": "motoko"
+    },
+    "day_5_challenge_9": {
+      "main": "day_5_challenge_9.mo",
+      "type": "motoko"
+    },
+    "day_5_withdraw": {
+      "main": "day_5_withdraw.mo",
+      "type": "motoko"
     }
   },
   "defaults": {
