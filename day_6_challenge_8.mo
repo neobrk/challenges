@@ -1,14 +1,4 @@
-import Array "mo:base/Array";
-import Debug "mo:base/Debug";
-import Hash "mo:base/Hash";
-import HashMap "mo:base/HashMap";
-import Iter "mo:base/Iter";
-import List "mo:base/List";
-import Nat "mo:base/Nat";
-import Principal "mo:base/Principal";
 import Result "mo:base/Result";
-import Text "mo:base/Text";
-import HTTP "http";
 
 actor {
   // Challenge 8 : Create another canister and use to mint a NFT by calling the mint method
