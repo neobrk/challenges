@@ -23,6 +23,10 @@
     "day_5_withdraw": {
       "main": "day_5_withdraw.mo",
       "type": "motoko"
+    },
+    "day_6": {
+      "main": "day_6.mo",
+      "type": "motoko"
     }
   },
   "defaults": {
