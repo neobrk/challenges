@@ -27,6 +27,10 @@
     "day_6": {
       "main": "day_6.mo",
       "type": "motoko"
+    },
+    "day_6_challenge_8": {
+      "main": "day_6_challenge_8.mo",
+      "type": "motoko"
     }
   },
   "defaults": {
